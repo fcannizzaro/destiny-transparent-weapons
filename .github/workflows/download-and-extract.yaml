@@ -1,0 +1,48 @@
+name: Download images from manifest, remove background and trim
+on:
+  workflow_dispatch:
+
+jobs:
+  package-stream-deck-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Install node dependencies
+        run: npm i
+
+      - name: Install python dependencies
+        run: pip install Pillow rembg
+
+      - name: Download weapons images
+        run: node ./download-images.js
+        env:
+          BUNGIE_TOKEN: ${{ secrets.BUNGIE_TOKEN }}
+
+      - name: Remove background
+        run: mkdir new_images && rembg p ./download ./new_images
+
+      - name: Trim
+        run: python ./trim-images.py ./new_images && mv -v ./new_images/* ./images/
+
+      - name: Remove download and new images directories
+        run: rm -r ./download && rm -r ./new_images
+
+      - name: Push new images
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add images
+          git commit -m "Add new images" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.SECRET_TOKEN }}
+          branch: ${{ github.ref }}
