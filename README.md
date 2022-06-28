@@ -12,5 +12,9 @@ In the `/images` directory you can find every legendary and exotic weapon image.
 - remove background to new images
 - trim generated images
 
+## Contributing
+
+If you find a bad/broken image open an issue with the related hash!
+
 ## License
 MIT
