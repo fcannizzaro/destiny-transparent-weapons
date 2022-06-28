@@ -14,7 +14,9 @@ In the `/images` directory you can find every legendary and exotic weapons.
 
 ## Contributing
 
-If you find a bad/broken image open an issue with the related hash!
+If you find a bad/broken image:
+- open an issue with the related hash
+- fork the repo, edit the image and open a pull request
 
 ## License
 MIT
