@@ -1,8 +1,9 @@
 # destiny-transparent-weapons
+[![Download images from manifest, remove background and trim](https://github.com/fcannizzaro/destiny-transparent-weapons/actions/workflows/download-and-extract.yaml/badge.svg?event=workflow_dispatch)](https://github.com/fcannizzaro/destiny-transparent-weapons/actions/workflows/download-and-extract.yaml)
 
 ## Resources
 
-In the `/images`directory you can find every legendary and exotic weapon image.
+In the `/images` directory you can find every legendary and exotic weapon image.
 
 ## Workflow
 
