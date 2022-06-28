@@ -3,7 +3,7 @@
 
 ## Resources
 
-In the `/images` directory you can find every legendary and exotic weapon image.
+In the `/images` directory you can find every legendary and exotic weapons.
 
 ## Workflow
 
