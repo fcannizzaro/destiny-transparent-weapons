@@ -23,6 +23,8 @@ const downloadFile = async (fileUrl, outputLocationPath) => {
     });
 }
 
+const weaponsBuckets = [1498876634, 2465295065, 953998645];
+
 const init = async () => {
 
     const {data} = await axios.get(`https://www.bungie.net/Platform/Destiny2/Manifest`, {
@@ -48,7 +50,8 @@ const init = async () => {
             [6, 5].includes(it.inventory?.tierType) &&
             it.itemType === 3 &&
             !weaponsDone[it.hash] &&
-            !it.nonTransferrable
+            !it.nonTransferrable &&
+            weaponsBuckets.includes(it.inventory?.bucketTypeHash)
         )
     ).map(it => [it.hash, it.screenshot]);
 
