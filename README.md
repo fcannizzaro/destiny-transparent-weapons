@@ -3,7 +3,7 @@
 
 ## Resources
 
-In the `/images` directory you can find every legendary and exotic weapon image.
+In the `/images` directory you can find every legendary and exotic weapons.
 
 ## Workflow
 
@@ -11,6 +11,12 @@ In the `/images` directory you can find every legendary and exotic weapon image.
 - downloaded missing images (filename is the item hash)
 - remove background to new images
 - trim generated images
+
+## Contributing
+
+If you find a bad/broken image:
+- open an issue with the related hash
+- fork the repo, edit the image and open a pull request
 
 ## License
 MIT
